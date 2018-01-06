@@ -1,0 +1,24 @@
+<form *ngIf="contact" (ngSubmit)="onSubmit()" #myForm="ngForm" class="form-container">
+  <mat-form-field>
+    <input matInput placeholder="first name" type="text" class="form-control" name="name"
+           [(ngModel)]="contact.firstName" #name="ngModel" required>
+    <button mat-button *ngIf="contact.firstName" matSuffix mat-icon-button aria-label="Clear" (click)="contact.firstName=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="last name" type="text" class="form-control" name="lastName"
+           [(ngModel)]="contact.lastName" #lastName="ngModel" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="phone" type="tel" class="form-control" name="phone"
+           [(ngModel)]="contact.phone" #lastName="ngModel" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="email" type="email" class="form-control" name="email"
+           [(ngModel)]="contact.email" #lastName="ngModel">
+  </mat-form-field>
+  <button mat-raised-button type="button" color="accent" (click)="goBack()">Cancel</button>
+  <button mat-raised-button type="submit" color="primary" [disabled]="myForm.invalid || myForm.pristine">Submit</button>
+</form>
+

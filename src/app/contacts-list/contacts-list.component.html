@@ -1,0 +1,11 @@
+<mat-card *ngFor="let contact of contacts | async">
+  <mat-card-header>
+    <img mat-card-avatar src="{{contact.photo}}">
+    <mat-card-title>
+      <a [routerLink]="['/contactdetails', contact.id]">{{contact.lastName}}, {{contact.firstName}}</a>
+      <button mat-button class="app-icon-button" (click)="deleteContact(contact)">
+        <i class="material-icons delete">delete</i>
+      </button>
+    </mat-card-title>
+  </mat-card-header>
+</mat-card>

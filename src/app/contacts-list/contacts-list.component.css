@@ -1,0 +1,12 @@
+.mat-card-avatar {
+  height: 60px;
+  width: 60px;
+}
+
+.mat-card-title {
+  font-size: 24px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
