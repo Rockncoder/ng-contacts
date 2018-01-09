@@ -35,4 +35,6 @@ jobs:
 
       # run tests!
       - run: echo "hello world"
+      - run: npm run build
+      - run: firebase deploy --token "$FIREBASE_TOKEN
       #- run: npm test
